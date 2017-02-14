@@ -10,9 +10,9 @@ function CookieStore (location, minCustomers, maxCustomers, avgCookies){
 
 //Average cookies per hour
 CookieStore.prototype.getAvgCookieCount = function(){
-  Math.floor(Math.random() * (this.maxCustomers + - this.minCustomers) + this.minCustomers);
+  return Math.floor(Math.random() * (this.maxCustomers + - this.minCustomers) + this.minCustomers);
 };
-console.log(firstAndPike.getAvgCookieCount);
+
 //Cookie Stores
 var firstAndPike = new CookieStore('1st and Pike',23,65,6.3);
 var seatac = new CookieStore('Seatac Airport',3,24,1.2);
@@ -23,6 +23,35 @@ var alki = new CookieStore('Alki',2,16,4.6);
 //Cookie store Array
 var stores = [firstAndPike,seatac,seattleCenter,capitolHill,alki];
 
+//Table html node
+var tableEl = document.createElement('table');
+
+//Loop to generate list from stor array
+for ( var i = 0; i < stores.length; i++){
+  var currentStore = stores[i];
+
+  var rowEl = document.createElement('tr');
+  tableEl.appendChild(rowEl);
+
+  var nameEl = document.createElement('th');
+  nameEl.textContent = currentStore.location;
+  rowEl.appendChild(nameEl);
+
+  var minCustEl = document.createElement('td');
+  minCustEl.textContent = currentStore.minCustomers;
+  rowEl.appendChild(minCustEl);
+
+  var maxCustEl = document.createElement('td');
+  maxCustEl.textContent = currentStore.maxCustomers;
+  rowEl.appendChild(maxCustEl);
+
+  var avgCookiesEl = document.createElement('td');
+  avgCookiesEl.textContent = currentStore.avgCookies;
+  rowEl.appendChild(avgCookiesEl);
+}
+
+document.body.appendChild(tableEl);
+console.log(firstAndPike.getAvgCookieCount());
 /*
 //First and Pike Store
 var firstAndPike = {

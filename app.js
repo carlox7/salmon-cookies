@@ -10,14 +10,14 @@ function CookieStore (location, minCustomers, maxCustomers, avgCookies){
 CookieStore.prototype.getAvgCookieCount = function(){
   Math.floor(Math.random() * (this.maxCustomers + - this.minCustomers) + this.minCustomers);
 };
-
+console.log(getAvgCookieCount);
 //Cookie Stores
 var firstAndPike = new CookieStore('1st and Pike',23,65,6.3);
 var seatac = new CookieStore('Seatac Airport',3,24,1.2);
 var seattleCenter = new CookieStore('Seattle Center',11,38,3.7);
 var capitolHill = new CookieStore('Capitol Hill',20,38,2.3);
 var alki = new CookieStore('Alki',2,16,4.6);
-console.log(firstAndPike);
+
 /*
 //First and Pike Store
 var firstAndPike = {

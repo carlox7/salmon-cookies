@@ -119,25 +119,72 @@ seattleCenter.cookieTotal();
 capitolHill.cookieTotal();
 alki.cookieTotal();
 
-//Array of cookie stores
-var cookieStores = [firstAndPike, seatac, seattleCenter, capitolHill, alki];
-
 //Array for store hours
 var time = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
+//Array of cookies per hour
 var salesPerHour = [firstAndPike.cookiesPerHour,seatac.cookiesPerHour,seattleCenter.cookiesPerHour,capitolHill.cookiesPerHour,alki.cookiesPerHour];
 console.log(salesPerHour);
 
-var pikeList = document.getElementById('firstPike');
+//List for First and Pike
+var salesList = document.getElementById('firstPike');
 
 for (var i = 0; i < firstAndPike.cookiesPerHour.length; i++){
   var listTotal = document.createElement('li');
   listTotal.textContent = time[i] + ': ' + firstAndPike.cookiesPerHour[i];
-  pikeList.appendChild(listTotal);
+  salesList.appendChild(listTotal);
 }
 var totalSales = document.createElement('li');
 totalSales.textContent = 'Total:' + firstAndPike.totalCookies;
-pikeList.appendChild(totalSales);
+salesList.appendChild(totalSales);
+
+//List for Seatac
+var salesList = document.getElementById('seatac');
+
+for (var i = 0; i < seatac.cookiesPerHour.length; i++){
+  var listTotal = document.createElement('li');
+  listTotal.textContent = time[i] + ': ' + seatac.cookiesPerHour[i];
+  salesList.appendChild(listTotal);
+}
+var totalSales = document.createElement('li');
+totalSales.textContent = 'Total:' + seatac.totalCookies;
+salesList.appendChild(totalSales);
+
+//List for Seattle Center
+var salesList = document.getElementById('scenter');
+
+for (var i = 0; i < seattleCenter.cookiesPerHour.length; i++){
+  var listTotal = document.createElement('li');
+  listTotal.textContent = time[i] + ': ' + seattleCenter.cookiesPerHour[i];
+  salesList.appendChild(listTotal);
+}
+var totalSales = document.createElement('li');
+totalSales.textContent = 'Total:' + seattleCenter.totalCookies;
+salesList.appendChild(totalSales);
+
+//List for Capitol Hill
+var salesList = document.getElementById('caphill');
+
+for (var i = 0; i < capitolHill.cookiesPerHour.length; i++){
+  var listTotal = document.createElement('li');
+  listTotal.textContent = time[i] + ': ' + capitolHill.cookiesPerHour[i];
+  salesList.appendChild(listTotal);
+}
+var totalSales = document.createElement('li');
+totalSales.textContent = 'Total:' + capitolHill.totalCookies;
+salesList.appendChild(totalSales);
+
+//List for alki
+var salesList = document.getElementById('alki');
+
+for (var i = 0; i < alki.cookiesPerHour.length; i++){
+  var listTotal = document.createElement('li');
+  listTotal.textContent = time[i] + ': ' + alki.cookiesPerHour[i];
+  salesList.appendChild(listTotal);
+}
+var totalSales = document.createElement('li');
+totalSales.textContent = 'Total:' + alki.totalCookies;
+salesList.appendChild(totalSales);
 
 //cookie array
 console.log(firstAndPike.totalCookies);

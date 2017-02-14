@@ -6,6 +6,7 @@ var firstAndPike = {
   minCustomers: 23,
   maxCustomers: 65,
   avgCookiesPerCust: 6.3,
+  totalCookies: 0,
   cookiesPerHour: [],
   //Calculation for cookies per hour
   cookiesNeeded: function(){
@@ -14,6 +15,10 @@ var firstAndPike = {
       var totalCookiesSold = randomNumCustomers * this.avgCookiesPerCust;
       this.cookiesPerHour.push(parseInt(totalCookiesSold));
     }
+  },
+  cookieTotal: function(){
+    for (var i = 0; i < this.cookiesPerHour.length; i++)
+      this.totalCookies += this.cookiesPerHour[i];
   }
 };
 
@@ -23,6 +28,7 @@ var seatac = {
   minCustomers: 3,
   maxCustomers: 24,
   avgCookiesPerCust: 1.2,
+  totalCookies: 0,
   cookiesPerHour: [],
   cookiesNeeded: function(){
     for (var i = 6; i < 21; i++){
@@ -30,6 +36,10 @@ var seatac = {
       var totalCookiesSold = randomNumCustomers * this.avgCookiesPerCust;
       this.cookiesPerHour.push(parseInt(totalCookiesSold));
     }
+  },
+  cookieTotal: function(){
+    for (var i = 0; i < this.cookiesPerHour.length; i++)
+      this.totalCookies += this.cookiesPerHour[i];
   }
 };
 
@@ -39,6 +49,7 @@ var seattleCenter = {
   minCustomers: 11,
   maxCustomers: 38,
   avgCookiesPerCust: 3.7,
+  totalCookies: 0,
   cookiesPerHour: [],
   cookiesNeeded: function(){
     for (var i = 6; i < 21; i++){
@@ -46,6 +57,10 @@ var seattleCenter = {
       var totalCookiesSold = randomNumCustomers * this.avgCookiesPerCust;
       this.cookiesPerHour.push(parseInt(totalCookiesSold));
     }
+  },
+  cookieTotal: function(){
+    for (var i = 0; i < this.cookiesPerHour.length; i++)
+      this.totalCookies += this.cookiesPerHour[i];
   }
 };
 
@@ -55,6 +70,7 @@ var capitolHill = {
   minCustomers: 20,
   maxCustomers: 38,
   avgCookiesPerCust: 2.3,
+  totalCookies: 0,
   cookiesPerHour: [],
   cookiesNeeded: function(){
     for (var i = 6; i < 21; i++){
@@ -62,6 +78,10 @@ var capitolHill = {
       var totalCookiesSold = randomNumCustomers * this.avgCookiesPerCust;
       this.cookiesPerHour.push(parseInt(totalCookiesSold));
     }
+  },
+  cookieTotal: function(){
+    for (var i = 0; i < this.cookiesPerHour.length; i++)
+      this.totalCookies += this.cookiesPerHour[i];
   }
 };
 // Alki Store
@@ -91,17 +111,52 @@ seatac.cookiesNeeded();
 seattleCenter.cookiesNeeded();
 capitolHill.cookiesNeeded();
 alki.cookiesNeeded();
+
+//Calling function to count cookie total
+firstAndPike.cookieTotal();
+seatac.cookieTotal();
+seattleCenter.cookieTotal();
+capitolHill.cookieTotal();
 alki.cookieTotal();
 
 //Array of cookie stores
 var cookieStores = [firstAndPike, seatac, seattleCenter, capitolHill, alki];
+
+//Array for store hours
+var time = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+
+var salesPerHour = [firstAndPike.cookiesPerHour,seatac.cookiesPerHour,seattleCenter.cookiesPerHour,capitolHill.cookiesPerHour,alki.cookiesPerHour];
+console.log(salesPerHour);
+
+var pikeList = document.getElementById('firstPike');
+
+for (var i = 0; i < firstAndPike.cookiesPerHour.length; i++){
+  var listTotal = document.createElement('li');
+  listTotal.textContent = time[i] + ': ' + firstAndPike.cookiesPerHour[i];
+  pikeList.appendChild(listTotal);
+}
+var totalSales = document.createElement('li');
+totalSales.textContent = 'Total:' + firstAndPike.totalCookies;
+pikeList.appendChild(totalSales);
+
+//cookie array
+console.log(firstAndPike.totalCookies);
+console.log(seatac.totalCookies);
+console.log(seattleCenter.totalCookies);
+console.log(capitolHill.totalCookies);
 console.log(alki.totalCookies);
+//total cookies per hour
 console.log(firstAndPike.cookiesPerHour);
 console.log(seatac.cookiesPerHour);
 console.log(seattleCenter.cookiesPerHour);
 console.log(capitolHill.cookiesPerHour);
 console.log(alki.cookiesPerHour);
-//console.log(cookieStoreOne);
+/*
+var cookieList = document.createElement('li');
+//userElement.setAttribute('id','cookie-list');
+cookieList.textContent = alki.cookiesPerHour;
+sectionEl.appendChild(cookieList);
+
 /*
 //Object literal notation
 var userFullName = prompt('please enter your full name');

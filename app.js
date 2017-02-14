@@ -1,5 +1,19 @@
 'use strict';
 
+function CookieStore (location, minCustomers, maxCustomers, avgCookies){
+  this.location = location;
+  this.minCustomers = minCustomers;
+  this.maxCustomers = maxCustomers;
+  this.avgCookies = avgCookies;
+}
+
+CookieStore.prototype.getAvgCookieCount = function(){
+  Math.floor(Math.random() * (this.maxCustomers + - this.minCustomers) + this.minCustomers);
+};
+
+var firstAndPike = new CookieStore('1st and Pike',23,65,6.3);
+console.log(firstAndPike);
+/*
 //First and Pike Store
 var firstAndPike = {
   location: '1st and Pike',

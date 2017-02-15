@@ -13,7 +13,7 @@ function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg
 
 //Average cookies per hour
 CookieStore.prototype.getAvgCookieCount = function(){
-  for (var hours = 0; hours < 15; hours++){
+  for (var hours = 0; hours < time.length; hours++){
     var cookiesPerHour =  Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1) + this.minCustomers) * this.avgCookies);
     this.hourlyAvg.push(cookiesPerHour);
     this.totalOfDay += cookiesPerHour;

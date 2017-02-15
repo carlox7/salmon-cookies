@@ -1,16 +1,22 @@
 'use strict';
 
 //Cookie store constructor
-function CookieStore (location, minCustomers, maxCustomers, avgCookies){
+function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg){
   this.location = location;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookies = avgCookies;
+  this.hourlyAvg = hourlyAvg || [];
+  this.totalofDay = 0;
 }
 
 //Average cookies per hour
 CookieStore.prototype.getAvgCookieCount = function(){
-  return Math.floor(Math.random() * (this.maxCustomers + - this.minCustomers) + this.minCustomers);
+  for (var hours = 0; hours < 15; hours++){
+    var cookiesPerHour =  Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1) + this.minCustomers) * this.avgCookies);
+    this.hourlyAvg.push(cookiesPerHour);
+    this.totalofDay += cookiesPerHour;
+  }
 };
 
 //Cookie Stores
@@ -23,10 +29,20 @@ var alki = new CookieStore('Alki',2,16,4.6);
 //Cookie store Array
 var stores = [firstAndPike,seatac,seattleCenter,capitolHill,alki];
 
+//Time Array
+var time = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+
+firstAndPike.getAvgCookieCount();
+seatac.getAvgCookieCount();
+seattleCenter.getAvgCookieCount();
+capitolHill.getAvgCookieCount();
+alki.getAvgCookieCount();
+
+console.log(firstAndPike);
 //Table html node
 var tableEl = document.createElement('table');
 
-//Loop to generate list from stor array
+//Loop to generate list from store array
 for ( var i = 0; i < stores.length; i++){
   var currentStore = stores[i];
 
@@ -49,9 +65,14 @@ for ( var i = 0; i < stores.length; i++){
   avgCookiesEl.textContent = currentStore.avgCookies;
   rowEl.appendChild(avgCookiesEl);
 }
+/*for(var times = 0; times < time.length; i++){
 
+  var timeEl = document.createElement('th');
+  timeEl.textContent = time[times];
+  rowEl.appendChild(timeEl);
+}
 document.body.appendChild(tableEl);
-console.log(firstAndPike.getAvgCookieCount());
+
 /*
 //First and Pike Store
 var firstAndPike = {

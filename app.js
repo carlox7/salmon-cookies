@@ -31,7 +31,7 @@ var alki = new CookieStore('Alki',2,16,4.6);
 var stores = [firstAndPike,seatac,seattleCenter,capitolHill,alki];
 
 //Time Array
-var time = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm',];
+var time = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
 firstAndPike.getAvgCookieCount();
 seatac.getAvgCookieCount();
@@ -58,9 +58,12 @@ for (var t = 0; t < time.length; t++){
   storeTime.textContent = time[t];
   tableEl.appendChild(storeTime);
 }
+
+//table header for daily location totals
 var totalCount = document.createElement('th');
 totalCount.textContent = 'Daily Location Total';
 tableEl.appendChild(totalCount);
+
 //table of store names
 for ( var i = 0; i < stores.length; i++){
   var currentStore = stores[i];
@@ -92,8 +95,8 @@ var dayTotalEl = document.createElement('tr');
 tableEl.appendChild(dayTotalEl);
 
 //table header for totals/hr
-var daySalesEl = document.createElement('th');
-daySalesEl.textContent = 'Totals';
-tableEl.appendChild(daySalesEl);
+//var daySalesEl = document.createElement('th');
+//daySalesEl.textContent = 'Totals';
+//tableEl.appendChild(daySalesEl);
 
 document.getElementById('stores').appendChild(tableEl);

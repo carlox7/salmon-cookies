@@ -7,7 +7,7 @@ function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg
   this.maxCustomers = maxCustomers;
   this.avgCookies = avgCookies;
   this.hourlyAvg = hourlyAvg || [];
-  this.totalofDay = 0;
+  this.totalOfDay = 0;
 }
 
 //Average cookies per hour
@@ -15,7 +15,7 @@ CookieStore.prototype.getAvgCookieCount = function(){
   for (var hours = 0; hours < 15; hours++){
     var cookiesPerHour =  Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1) + this.minCustomers) * this.avgCookies);
     this.hourlyAvg.push(cookiesPerHour);
-    this.totalofDay += cookiesPerHour;
+    this.totalOfDay += cookiesPerHour;
   }
 };
 
@@ -42,13 +42,16 @@ console.log(firstAndPike.hourlyAvg);
 //Table html node
 var tableEl = document.createElement('table');
 
+//Table Row for store time
 var timeEl = document.createElement('tr');
 tableEl.appendChild(timeEl);
 
+//blank header over store names
 var storeHrs = document.createElement('th');
 storeHrs.textContent = ' ';
 tableEl.appendChild(storeHrs);
 
+//lists store hours
 for (var t = 0; t < time.length; t++){
   var storeTime = document.createElement('td');
   storeTime.textContent = time[t];
@@ -75,6 +78,16 @@ for ( var i = 0; i < stores.length; i++){
     rowEl.appendChild(salesEl);
   };
 };
+
+//table row for totals
+var dayTotalEl = document.createElement('tr');
+tableEl.appendChild(dayTotalEl);
+
+//table header for totals
+var daySalesEl = document.createElement('th');
+daySalesEl.textContent = 'Totals';
+tableEl.appendChild(daySalesEl);
+
 document.getElementById('stores').appendChild(tableEl);
 
 //table of first and pike cookie sales

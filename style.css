@@ -13,6 +13,7 @@ ul{
 
 body{
   background-color: #0077be;
+  padding: 1rem;
 }
 
 div {
@@ -31,4 +32,18 @@ p{
   font-size: 40px;
   color: white;
   font-family: futura;
+}
+
+td, th {
+  width: 4rem;
+  height: 2rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: white;
+  font font-family: verdana;
+}
+th {
+  background: #ff8c69;
+  border-color: white;
+  font font-family: verdana;
 }

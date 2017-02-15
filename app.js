@@ -42,6 +42,19 @@ console.log(firstAndPike.hourlyAvg);
 //Table html node
 var tableEl = document.createElement('table');
 
+var timeEl = document.createElement('tr');
+tableEl.appendChild(timeEl);
+
+var storeHrs = document.createElement('th');
+storeHrs.textContent = ' ';
+tableEl.appendChild(storeHrs);
+
+for (var t = 0; t < time.length; t++){
+  var storeTime = document.createElement('td');
+  storeTime.textContent = time[t];
+  tableEl.appendChild(storeTime);
+}
+
 //table of store names
 for ( var i = 0; i < stores.length; i++){
   var currentStore = stores[i];
@@ -57,18 +70,12 @@ for ( var i = 0; i < stores.length; i++){
 
   //table of average cookie sales per hour
   for(var ii = 0; ii < time.length; ii++){
-    var timeEl = document.createElement('td');
-    timeEl.textContent = currentStore.hourlyAvg[ii];
-    rowEl.appendChild(timeEl);
+    var salesEl = document.createElement('td');
+    salesEl.textContent = currentStore.hourlyAvg[ii];
+    rowEl.appendChild(salesEl);
   };
 };
 document.getElementById('stores').appendChild(tableEl);
-
-//table of store hours
-
-var timeRow = document.createElement('table');
-
-document.getElementById('time').appendChild(timeRow);
 
 //table of first and pike cookie sales
 

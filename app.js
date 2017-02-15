@@ -1,13 +1,14 @@
 'use strict';
 
 //Cookie store constructor
-function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg){
+function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg, totalOfHour){
   this.location = location;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookies = avgCookies;
   this.hourlyAvg = hourlyAvg || [];
   this.totalOfDay = 0;
+  this.totalOfHour = 0;
 }
 
 //Average cookies per hour

@@ -38,40 +38,39 @@ seattleCenter.getAvgCookieCount();
 capitolHill.getAvgCookieCount();
 alki.getAvgCookieCount();
 
-console.log(firstAndPike);
+console.log(firstAndPike.hourlyAvg);
 //Table html node
 var tableEl = document.createElement('table');
 
-//Loop to generate list from store array
+//table of store names
 for ( var i = 0; i < stores.length; i++){
   var currentStore = stores[i];
 
+  //creates rows for each store
   var rowEl = document.createElement('tr');
   tableEl.appendChild(rowEl);
 
+  //lists store names as headers
   var nameEl = document.createElement('th');
   nameEl.textContent = currentStore.location;
   rowEl.appendChild(nameEl);
 
-  var minCustEl = document.createElement('td');
-  minCustEl.textContent = currentStore.minCustomers;
-  rowEl.appendChild(minCustEl);
+  //table of average cookie sales per hour
+  for(var ii = 0; ii < time.length; ii++){
+    var timeEl = document.createElement('td');
+    timeEl.textContent = currentStore.hourlyAvg[ii];
+    rowEl.appendChild(timeEl);
+  };
+};
+document.getElementById('stores').appendChild(tableEl);
 
-  var maxCustEl = document.createElement('td');
-  maxCustEl.textContent = currentStore.maxCustomers;
-  rowEl.appendChild(maxCustEl);
+//table of store hours
 
-  var avgCookiesEl = document.createElement('td');
-  avgCookiesEl.textContent = currentStore.avgCookies;
-  rowEl.appendChild(avgCookiesEl);
-}
-/*for(var times = 0; times < time.length; i++){
+var timeRow = document.createElement('table');
 
-  var timeEl = document.createElement('th');
-  timeEl.textContent = time[times];
-  rowEl.appendChild(timeEl);
-}
-document.body.appendChild(tableEl);
+document.getElementById('time').appendChild(timeRow);
+
+//table of first and pike cookie sales
 
 /*
 //First and Pike Store

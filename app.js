@@ -1,5 +1,9 @@
 'use strict';
 
+// console.log(firstAndPike.totalOfDay);
+//Table html node
+var tableEl = document.createElement('table');
+console.log(tableEl);
 //Cookie store constructor
 function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg, totalOfHour){
   this.location = location;
@@ -14,23 +18,30 @@ function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg
 //Average cookies per hour
 CookieStore.prototype.getAvgCookieCount = function(){
   for (var hours = 0; hours < time.length; hours++){
-    var cookiesPerHour =  Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1) + this.minCustomers) * this.avgCookies);
+    var cookiesPerHour =  Math.floor(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1)) + this.minCustomers) * this.avgCookies);
     this.hourlyAvg.push(cookiesPerHour);
     this.totalOfDay += cookiesPerHour;
   }
 };
 
 //User store data
-CookieStore.prototype.appendTable = function(tableEl){
+CookieStore.prototype.appendTable = function(){
   var userStore = document.createElement('tr');
   var storeName = document.createElement('td');
   storeName.textContent = this.location;
   userStore.appendChild(storeName);
 
   for(var j = 0; j < this.hourlyAvg.length; j++) {
-    
+    var newCookie = document.createElement('td');
+    newCookie.textContent = this.hourlyAvg[j];
+    userStore.appendChild(newCookie);
   }
-}
+  var totalDaysCookies = document.createElement('td');
+  totalDaysCookies.textContent = currentStore.totalOfDay;
+  userStore.appendChild(totalDaysCookies);
+
+  console.log(userStore);
+  console.log(tableEl);
   tableEl.appendChild(userStore);
 };
 
@@ -52,10 +63,6 @@ seatac.getAvgCookieCount();
 seattleCenter.getAvgCookieCount();
 capitolHill.getAvgCookieCount();
 alki.getAvgCookieCount();
-
-console.log(firstAndPike.totalOfDay);
-//Table html node
-var tableEl = document.createElement('table');
 
 //Table Row for store time
 var timeEl = document.createElement('tr');
@@ -130,8 +137,13 @@ function handleSubmit(event) {
   var maxCustomers = parseInt(event.target.maxCust.value);
   var avgCookies = parseInt(event.target.avgCookies.value);
 
+  console.log(storeName);
+  console.log(minCustomers);
+  console.log(maxCustomers);
+  console.log(avgCookies);
+
   //Adding user store information from Form
-  var store = new CookieStore(location, minCustomers, maxCustomers, avgCookies);
+  var store = new CookieStore(storeName, minCustomers, maxCustomers, avgCookies);
   store.getAvgCookieCount();
   stores.push(store);
   var newStores = document.getElementById('tableEl');

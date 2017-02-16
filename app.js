@@ -20,6 +20,20 @@ CookieStore.prototype.getAvgCookieCount = function(){
   }
 };
 
+//User store data
+CookieStore.prototype.appendTable = function(tableEl){
+  var userStore = document.createElement('tr');
+  var storeName = document.createElement('td');
+  storeName.textContent = this.location;
+  userStore.appendChild(storeName);
+
+  for(var j = 0; j < this.hourlyAvg.length; j++) {
+    
+  }
+}
+  tableEl.appendChild(userStore);
+};
+
 //Cookie Stores
 var firstAndPike = new CookieStore('1st and Pike',23,65,6.3);
 var seatac = new CookieStore('Seatac Airport',3,24,1.2);
@@ -100,3 +114,26 @@ tableEl.appendChild(dayTotalEl);
 //tableEl.appendChild(daySalesEl);
 
 document.getElementById('stores').appendChild(tableEl);
+
+//Set up variable for User to input Cookie store parameters
+var userInputStoreForm = document.getElementById('cookie-store-form');
+
+//Event Listener
+userInputStoreForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  var storeName = event.target.cookieStoreName.value;
+  var minCustomers = parseInt(event.target.minCust.value);
+  var maxCustomers = parseInt(event.target.maxCust.value);
+  var avgCookies = parseInt(event.target.avgCookies.value);
+
+  //Adding user store information from Form
+  var store = new CookieStore(location, minCustomers, maxCustomers, avgCookies);
+  store.getAvgCookieCount();
+  stores.push(store);
+  var newStores = document.getElementById('tableEl');
+  store.appendTable(newStores);
+}

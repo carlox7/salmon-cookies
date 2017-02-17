@@ -1,7 +1,7 @@
 h1{
   font-size: 70px;
   font-family: 'Rubik', sans-serif;
-  color: #ffa07a;
+  color: white;
   text-decoration: underline;
 
 }
@@ -23,9 +23,11 @@ a{
 }
 
 p{
-  font-size: 40px;
-  color: white;
+  font-size: 20px;
   font-family: futura;
+  margin: 0;
+  text-align: justify;
+
 }
 
 td, th {
@@ -62,9 +64,53 @@ div {
 }
 
 .navbar {
-  position: fixed;
   background-color: #ff8c69 ;
   height: 100px;
   width: 100%;
   top: 0;
   margin: 0;
+}
+
+.salmonpic {
+  background-image: url("salmon.png");
+  border: 0;
+  text-align: center;
+  line-height: 246px;
+  width: 787px;
+  height:246px;
+  margin: 0 auto;
+}
+
+.main{
+  padding: 10%;
+  height: 400px;
+  text-align: center;
+  border: 0;
+}
+
+.main div{
+  background-color: #002244;
+  height: 400px;
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  padding: 30px;
+  border: 0;
+
+
+}
+
+.about{
+background-image: url(spaceneedle.jpg);
+color: #ff8c69;
+}
+
+.article{
+background-image: url(pike.jpg);
+color: white;
+}
+
+.articletwo{
+background-image: url(cookies.jpg);
+color: #69BE28;
+}

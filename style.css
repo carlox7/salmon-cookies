@@ -1,6 +1,6 @@
 h1{
   font-size: 70px;
-  font-family: futura;
+  font-family: 'Rubik', sans-serif;
   color: #ffa07a;
   text-decoration: underline;
 
@@ -46,4 +46,17 @@ th {
   background: #ff8c69;
   border-color: white;
   font font-family: verdana;
+}
+
+#cookie-store-form {
+  background-color: #ff8c69;
+  width: 20%;
+  margin-right: 0;
+  min-width: 225px;
+  font font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+}
+
+label, input {
+  display: block;
 }

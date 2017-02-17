@@ -1,9 +1,14 @@
 h1{
   font-size: 70px;
   font-family: 'Rubik', sans-serif;
-  color: white;
+  color: #ff8c69;
   text-decoration: underline;
 
+}
+
+h2 {
+  font-family: 'Rubik', sans-serif;
+  text-decoration: underline;
 }
 
 ul li{
@@ -46,15 +51,14 @@ th {
 
 #cookie-store-form {
   background-color: #ff8c69;
-  width: 20%;
-  margin-right: 0;
-  min-width: 225px;
   font font-family: 'Rubik', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
 }
 
 label, input {
-  display: block;
+
 }
 
 div {
@@ -96,6 +100,7 @@ div {
   margin: 10px;
   padding: 30px;
   border: 0;
+  vertical-align: top;
 
 
 }
@@ -111,6 +116,6 @@ color: white;
 }
 
 .articletwo{
-background-image: url(cookies.jpg);
-color: #69BE28;
+background-image: url(cookiejar.jpg);
+color: yellow;
 }

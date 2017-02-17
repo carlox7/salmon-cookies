@@ -17,6 +17,7 @@ function CookieStore (location, minCustomers, maxCustomers, avgCookies,hourlyAvg
 
 //Average cookies per hour
 CookieStore.prototype.getAvgCookieCount = function(){
+
   for (var hours = 0; hours < time.length - 1; hours++){
     var cookiesPerHour =  Math.floor(Math.floor(Math.random() * ((this.maxCustomers - this.minCustomers + 1)) + this.minCustomers) * this.avgCookies);
     this.hourlyAvg.push(cookiesPerHour);
@@ -97,6 +98,7 @@ function timesHeader(){
     storeTime.textContent = time[t];
     tableEl.appendChild(storeTime);
   }
+
 }
 timesHeader();
 
@@ -142,5 +144,7 @@ function handleSubmit(event) {
   store.getAvgCookieCount();
   stores.push(store);
   var newStores = document.getElementById('tableEl');
+
   store.cookieStoresLocation(newStores);
+
 }

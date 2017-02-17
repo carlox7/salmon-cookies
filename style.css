@@ -16,13 +16,6 @@ body{
   padding: 1rem;
 }
 
-div {
-  font-size: 50px;
-  font-family: verdana;
-  text-decoration: underline;
-  color: white;
-}
-
 a{
   font-size: 50px;
   font-family: verdana;
@@ -60,3 +53,13 @@ th {
 label, input {
   display: block;
 }
+
+div {
+  border: 99px solid;
+}
+
+.navbar {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  top: 0;

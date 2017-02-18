@@ -81,14 +81,14 @@ div {
   margin: 0 auto;
 }
 
-.mainpage {
+.main {
   padding: 10%;
   height: 400px;
   text-align: center;
   border: 0;
 }
 
-.mainpage div{
+.main div{
   background-color: #002244;
   height: 400px;
   display: inline-block;
@@ -97,7 +97,6 @@ div {
   padding: 30px;
   border: 0;
   vertical-align: top;
-
 
 }
 

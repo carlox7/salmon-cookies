@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <meta charset="utf-8">
-    <title>Sales</title>
+    <title></title>
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <img src="salmon.png" alt="Picture of a Salmon">
-    <h1>Pat's Salmon Cookies</h1>
-    <a href="index.html">Main</a>
-    <p></p>
+    <div class="navbar">
+      <ul>
+        <li><a href="index.html">Main</a></li>
+        <li><a href="sales.html">Sales Report</a></li>
+        <li><a href="index.html">Contact Us</a></li>
+        <li><a href="index.html">Merchandise</a></li>
+        <li><a href="index.html">Salmon Events</a></li>
+      </ul>
+    </div>
+
+      <div class="salmonpic"><h1>Pat's Salmon Cookies</h1></div>
+      <div class="main">
     <section id = "stores"></section>
 
-    <p></p>
     <form id="cookie-store-form">
       <fieldset>
         <legend>Enter New Cookie Store Info</legend>
@@ -31,6 +37,40 @@
         <button type="submit" name="button">SUBMIT</button>
       </fieldset>
     </form>
+
+    <div class="Currentlocations" id="storelocations">
+
+
+      <h2>Current Locations</h2>
+      <ol>
+        <li>
+          <strong>1st and Pike</strong>
+          4343 Pike Place Drive
+          Phone: 555-4533
+        </li>
+        <li>
+          <strong>Seatac Airport</strong>
+          43552 Seatac place
+          Phone: 555-3453
+        </li>
+        <li>
+          <strong>Seattle Center</strong>
+          2309 Space Needle RD
+          Phone: 555-0099
+        </li>
+        <li>
+          <strong>Capitol Hill</strong>
+          24335 Capitol Place
+          Phone: 555-5552
+        </li>
+        <li>
+          <strong>Alki</strong>
+          988 Alki Ave S
+          Phone:867-5309
+        </li>
+      </ol>
+
+    </div>
 
     <script src="app.js" type="text/javascript"></script>
   </body>

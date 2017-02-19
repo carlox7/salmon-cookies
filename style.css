@@ -68,7 +68,7 @@ th {
   width: 787px;
   height:246px;
   margin: 0 auto;
-  
+
 }
 
 .mainpage {
@@ -115,61 +115,67 @@ color: yellow;
 }
 
 .stores{
-  border: 1px solid;
-  border-color: black;
   height: 400px;
   width: 1130px;
-  background: lightgrey;
   margin: 0 auto;
 
 }
 
 .firstAndPike{
-  border: 1px solid;
-  border-color: black;
-  height: 300px;
+  height: 200px;
   width: 220px;
-  background: pink;
   margin: 0 auto;
   display: inline-block;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #ff8c69;
 }
 
 .seatac{
-  border: 1px solid;
-  border-color: black;
-  height: 300px;
+  height: 200px;
   width: 220px;
-  background: pink;
   margin: 0 auto;
   display: inline-block;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #ff8c69;
 }
 
 .seattlecenter{
-  border: 1px solid;
-  border-color: black;
-  height: 300px;
+  height: 200px;
   width: 220px;
-  background: pink;
   margin: 0 auto;
   display: inline-block;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #ff8c69;
 }
 
 .capitolhill{
-  border: 1px solid;
-  border-color: black;
-  height: 300px;
+  height: 200px;
   width: 220px;
-  background: pink;
   margin: 0 auto;
   display: inline-block;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #ff8c69;
 }
 
 .alki{
-  border: 1px solid;
-  border-color: black;
-  height: 300px;
+  height: 200px;
   width: 220px;
-  background: pink;
   margin: 0 auto;
   display: inline-block;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  text-align: center;
+  color: #ff8c69;
+}
+
+ul {
+  list-style-type: none;
 }

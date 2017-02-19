@@ -1,6 +1,5 @@
 'use strict';
 
-// console.log(firstAndPike.totalOfDay);
 //Table html node
 var tableEl = document.createElement('table');
 console.log(tableEl);
@@ -84,10 +83,13 @@ function timesHeader(){
 timesHeader();
 
 //table of store names
-for ( var i = 0; i < stores.length; i++){
-  var currentStore = stores[i];
-  currentStore.cookieStoresLocation();
+function locationNames(){
+  for ( var i = 0; i < stores.length; i++){
+    var currentStore = stores[i];
+    currentStore.cookieStoresLocation();
+  }
 };
+locationNames();
 
 document.getElementById('stores').appendChild(tableEl);
 

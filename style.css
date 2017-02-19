@@ -114,6 +114,16 @@ color: yellow;
 
 }
 
+.storehead {
+  height: 100px;
+  width: 600px;
+  margin: 0 auto;
+  color: white;
+}
+
+# currentstores{
+  color: white;
+}
 .stores{
   height: 400px;
   width: 1130px;
